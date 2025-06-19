@@ -11,26 +11,58 @@
     <title>calculator</title>
 </head>
 <body >
-   <section>
-    <div class="container">
-        <div class="row">
-            <div class="col">
+    <header>
+        <div class="container-fulid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="dropdown">
+                        <button  type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <h4>Standerd</h4>
+                    <div class="container-fulid">
+                        <p id="result"></p>
+                        <div class="row row-cols-5" style="gap: 5px;">
+                            <button onclick="santhosh('+')" class="operator-btn">/</button>
+                            <button onclick="santhosh('-')" class="operator-btn">-</button>
+                            <button onclick="santhosh('*')" class="operator-btn">*</button>
+                            <button onclick="clearDisplay()" class="operator-btn">C</button><button onclick="backspace('<-')">Backspace</button>
+                            <button onclick="santhosh('7')">7</button>
+                            <button onclick="santhosh('8')">8</button>
+                            <button onclick="santhosh('9')">9</button>
+                            <button onclick="santhosh('+')" class="operator-btn">+</button>
+                            <button onclick="santhosh('4')">4</button>
+                            <button onclick="santhosh('5')">5</button>
+                            <button onclick="santhosh('6')">6</button>
+                            <button onclick="santhosh('.')">.</button>
+                            <button onclick="santhosh('3')">3</button>
+                            <button onclick="santhosh('2')">2</button>
+                            <button onclick="santhosh('1')">1</button>
+                            <button onclick="equal()">=</button>
+                            <button onclick="santhosh('0')">0</button>
+                            <button onclick="backspace('<-')">Backspace</button>
+                        </div>
+                    </div>
+                </div>
                 
-                <button id="1" onclick="leeLa('1')">1</button>
-                <button id="2" onclick="leeLa('2')">2</button>
-                <button id="3"onclick="leeLa('3')">3</button>
-                <button id="4" onclick="leeLa('4')">4</button>
-                <button id="5" onclick="leeLa('5')">5</button>
-                <button id="+"  onclick="leeLa('+')">+</button>
-                <button onclick="equal()">=</button>
-                <p id="result"></p>
-            </div>
-            <div class="col">
-
+                <div class="col">
+                   <h4> History</h4>
+                </div>
+                <div class="col">
+                    <h4>Memory</h4>
+                </div>
             </div>
         </div>
-    </div>
-   </section>
+
+    </header>
+   <section>
+    
 <script src="script.js"></script>
 </body>
 </html>
