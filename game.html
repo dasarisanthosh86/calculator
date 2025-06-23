@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(90deg, rgb(60, 143, 207),rgb(204, 18, 224));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      color: #00796b;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .numBer1{
+        height: 30px;
+        width: 280px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lucky Number</h1>
+        <p><input id="numBer1" class="numBer1" type="text" placeholder="Enter the Number"></p>
+        <button onclick="subMit()" >submit</button> 
+        <p id="result"></p>
+
+    </div>
+    <script>
+      function subMit(){
+        let number = document.getElementById('numBer1').value;
+        let resultElement = document.getElementById("result");
+
+        if (number == 5){
+
+            resultElement.innerText = "Congratulations This is lucky Number";
+            resultElement.style.color = "blue";
+        } else if(number >=4 && number <=6){
+            resultElement.innerText = "It's very close to Lucky Number"
+            resultElement.style.color = "green"
+
+        }else{
+            resultElement.innerText = "This not lucky Number"
+            resultElement.style.color = "red"
+        }
+      }
+    </script>
+</body>
+</html>

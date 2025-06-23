@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Range Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(90deg, rgb(60, 143, 207),rgb(204, 18, 224));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      color: #00796b;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004d40;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .numBer1{
+        height: 30px;
+        width: 280px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Number Range Checker</h2>
+    <input type="number" id="numBer1" placeholder="Enter a number" class="numBer1">
+    <button onclick="sanThosh()">Check Range</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function sanThosh() {
+      const number = parseFloat(document.getElementById('numBer1').value);
+      const resultElement = document.getElementById('result');
+
+      if (number >=1 &&  number <= 10) {
+        resultElement.innerText = "This Rang is 1 to 10";
+        resultElement.style.color = "blue";
+      }else if (number >=11 && number <=20){
+        resultElement.innerText = " This is Rang 11 to 20";
+        resultElement.style.color = "yellow";
+      }else if (number >=21 && number <=50){
+        resultElement.innerText = " This is Rang 21 to 50";
+        resultElement.style.color = "green";
+      }
+      else if (number >=51 && number <=80){
+        resultElement.innerText = " This is Rang 51 to 80";
+        resultElement.style.color = "orenge";
+      }else if (number >=81 && number <=100){
+        resultElement.innerText = " This is Rang 81 to 100";
+        resultElement.style.color = "red";
+      }else {
+        resultElement.innerText = "This is out of the Rang";
+        resultElement.style.color = "black";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Multiple anwsars Tast</h2>
+       <label   id="quation1">html full form</label><br>
+       <input type="checkbox"  value="A"> A. Hyper text markup langege<br>
+       <input type="checkbox"  value="B">B. Hyper text markup langege<br>
+       <input type="radio"   value="C">C. Hyper text markup langege<br>
+       <input type="radio" value="D">D. Hyper text markup language<br>
+       
+       <button onclick="Answercheck()">submut</button>
+       <p id="result"></p>
+    </div>
+    <script>
+   
+            
+        function Answercheck(){
+            let num1 = document.getElementById("quation1");
+            let resultElement = document.getElementById("result");
+            if (num1.value === ('D')) {
+                resultElement.innerText = "correct Answer";
+                resultElement.style.color = "blue"; 
+            }
+            else {
+                resultElement.innerText ="is not correct answer. THe correct answer is :D.";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

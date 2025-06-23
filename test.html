@@ -2,48 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style> 
-        body{
+    <title>Number Sign Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
             text-align: center;
+            padding: 50px;
         }
-        .in{
-            height: 50px;
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+       
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <input type="text" class="in" id="student"   placeholder="Enter your Marks">
-    <p id="result"></p>
-    <button onclick="equal()">check</button>
-    <button onclick="leelaToclear()">clear</button>
+    <div class="container">
+        <h2>Number Sign Checker</h2>
+        <input type="number" id="numberInput" placeholder="Enter a number" />
+        <br>
+        <button onclick="checkNumberSign()">Check</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        
+        function checkNumberSign() {
+            const number = parseFloat(document.getElementById("numberInput").value);
+            const resultDiv = document.getElementById("result");
+
+            if (isNaN(number)) {
+                resultDiv.textContent = "Please enter a valid number.";
+                resultDiv.style.color = "red";
+            } else if (number > 0) {
+                resultDiv.textContent = "The number is positive.";
+                resultDiv.style.color = "green";
+            } else if (number < 0) {
+                resultDiv.textContent = "The number is negative.";
+                resultDiv.style.color = "orange";
+            } else {
+                resultDiv.textContent = "The number is zero.";
+                resultDiv.style.color = "blue";
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-<script>
-    let ouputElement = document.getElementById('result');
-    
-   function equal(){
-
-    let Marks = document.getElementById('student').value;
-    if (Marks >=85){
-        ouputElement.innerText = "Excellent"
-        
-    }
-    else if(Marks >= 75){
-        ouputElement.innerText = "good"
-    }
-    else if (Marks >= 60){
-        ouputElement.innerText = "pass"
-    }
-    else{
-        ouputElement.innerText = "fail"
-    }
-}
- function leelaToclear(){
-     document.getElementById('student').value = '';
-    ouputElement.innerText = "";
- }
-</script>
