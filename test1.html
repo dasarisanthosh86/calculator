@@ -38,20 +38,100 @@
                    <input type="radio" id="q3d" name="q3" value="D">D. Colorful Style <br>   
                </div>
             </div>
+            <div class="row">
+                <div class="col">
+                   <label >4. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q4a" name="q4" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q4b" name="q4" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q4c" name="q4" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q4d" name="q4" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >5. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q5a" name="q5" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q5b" name="q5" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q5c" name="q5" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q5d" name="q5" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >6. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q6a" name="q6" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q6b" name="q6" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q6c" name="q6" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q6d" name="q6" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >7. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q7a" name="q7" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q7b" name="q7" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q7c" name="q7" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q7d" name="q7" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >8. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q8a" name="q8" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q8b" name="q8" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q8c" name="q8" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q8d" name="q8" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >9. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q9a" name="q9" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q9b" name="q9" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q9c" name="q9" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q9d" name="q9" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label >10. Which property is used to change the background color?</label><br>
+                   <input type="radio" id="q10a" name="q10" value="A">A. Creative Style Sheets<br>
+                   <input type="radio" id="q10b" name="q10" value="B">B. Cascading Style Sheets<br>
+                   <input type="radio" id="q10c" name="q10" value="C">C. Computer Style Sheets<br>
+                   <input type="radio" id="q10d" name="q10" value="D">D. Colorful Style <br>   
+               </div>
+            </div>
         </div>
         <button onclick="answerCheck()"> Submit</button>
         <p id="SUbmit"></p>
         <p id="output2"></p>
-        <p id="output3"></p>
+        <P id="output3"></P>
+        <p id="output4"></p>
+        <p id="output5"></p>
+        <p id="output6"></p>
+        <p id="output7"></p>
+        <p id="output8"></p>
+        <p id="output9"></p>
+        <p id="output10"></p>
+        <p id="score"></p>
     </div>
     
     <script>
        
         function answerCheck(){
-            
+            let score = 0;
+            total = 10;
+           let score1 = document.getElementById('score');
            let  output1 = document.getElementById('SUbmit');
             let output2 = document.getElementById('output2');
             let output3 = document.getElementById('output3');
+            let output4 = document.getElementById('output4');
+            let output5 = document.getElementById('output5');
+            let output6 = document.getElementById('output6');
+            let output7 = document.getElementById('output7');
+            let output8 = document.getElementById('output8');
+            let output9 = document.getElementById('output9');
+            let output10 = document.getElementById('output10');
             let selected = null;
             if (document.getElementById('q1a').checked) {
                 selected = "A";
@@ -70,6 +150,7 @@
             } else if (selected === "A") {
                output1.innerText = " Correct answer!";
                output1.style.color = "green";
+               score++;
             } else {
                output1.innerText = " Incorrect answer.";
                output1.style.color = "red";
@@ -93,10 +174,13 @@
             } else if (selected2 === "B") {
                output2.innerText = " Correct answer!";
                output2.style.color = "green";
+               score++;
             } else {
                output2.innerText = " Incorrect answer.";
                output2.style.color = "red";
             }
+
+            // Q.3
             let selected3 = null;
             if (document.getElementById('q3a').checked) {
                 selected3 = "A";
@@ -115,12 +199,190 @@
             } else if (selected3 === "B") {
                output3.innerText = " Correct answer!";
                output3.style.color = "green";
+               score++;
             } else {
                output3.innerText = " Incorrect answer.";
                output3.style.color = "red";
             }
 
+            // Q.4
+            let selected4 = null;
+            if (document.getElementById('q4a').checked) {
+                selected4 = "A";
+            }else if (document.getElementById('q4b').checked) {
+                selected4 = "B";
+            }else if (document.getElementById('q4c').checked) {
+                selected4 = "C";
+            }else if (document.getElementById('q4d').checked) {
+                selected4 = "D";
+            }
 
+
+            if (selected4 === null) {
+                output4.innerText = " Please select an option.";
+                output4.style.color = "orange";
+            } else if (selected4 === "C") {
+               output4.innerText = " Correct answer!";
+               output4.style.color = "green";
+               score++;
+            } else {
+               output4.innerText = " Incorrect answer.";
+               output4.style.color = "red";
+            }
+
+             // Q.5
+            let selected5 = null;
+            if (document.getElementById('q5a').checked) {
+                selected5 = "A";
+            }else if (document.getElementById('q5b').checked) {
+                selected5 = "B";
+            }else if (document.getElementById('q5c').checked) {
+                selected5 = "C";
+            }else if (document.getElementById('q5d').checked) {
+                selected5 = "D";
+            }
+
+
+            if (selected5 === null) {
+                output5.innerText = " Please select an option.";
+                output5.style.color = "orange";
+            } else if (selected5 === "C") {
+               output5.innerText = " Correct answer!";
+               output5.style.color = "green";
+               score++;
+            } else {
+               output5.innerText = " Incorrect answer.";
+               output5.style.color = "red";
+            }
+
+            // Q.6
+            let selected6 = null;
+            if (document.getElementById('q6a').checked) {
+                selected6 = "A";
+            }else if (document.getElementById('q6b').checked) {
+                selected6 = "B";
+            }else if (document.getElementById('q6c').checked) {
+                selected6 = "C";
+            }else if (document.getElementById('q6d').checked) {
+                selected6 = "D";
+            }
+
+
+            if (selected6 === null) {
+                output6.innerText = " Please select an option.";
+                output6.style.color = "orange";
+            } else if (selected6 === "C") {
+               output6.innerText = " Correct answer!";
+               output6.style.color = "green";
+               score++;
+            } else {
+               output6.innerText = " Incorrect answer.";
+               output6.style.color = "red";
+            }
+
+            // Q.7
+            let selected7 = null;
+            if (document.getElementById('q7a').checked) {
+                selected7 = "A";
+            }else if (document.getElementById('q7b').checked) {
+                selected7 = "B";
+            }else if (document.getElementById('q7c').checked) {
+                selected7 = "C";
+            }else if (document.getElementById('q7d').checked) {
+                selected7 = "D";
+            }
+
+
+            if (selected7 === null) {
+                output7.innerText = " Please select an option.";
+                output7.style.color = "orange";
+            } else if (selected7 === "C") {
+               output7.innerText = " Correct answer!";
+               output7.style.color = "green";
+               score++;
+            } else {
+               output7.innerText = " Incorrect answer.";
+               output7.style.color = "red";
+            }
+             
+
+            // Q.7
+            let selected8 = null;
+            if (document.getElementById('q8a').checked) {
+                selected8 = "A";
+            }else if (document.getElementById('q8b').checked) {
+                selected8 = "B";
+            }else if (document.getElementById('q8c').checked) {
+                selected8 = "C";
+            }else if (document.getElementById('q8d').checked) {
+                selected8 = "D";
+            }
+
+
+            if (selected8 === null) {
+                output8.innerText = " Please select an option.";
+                output8.style.color = "orange";
+            } else if (selected8 === "C") {
+               output8.innerText = " Correct answer!";
+               output8.style.color = "green";
+               score++;
+            } else {
+               output8.innerText = " Incorrect answer.";
+               output8.style.color = "red";
+            }
+
+            // Q.7
+            let selected9 = null;
+            if (document.getElementById('q9a').checked) {
+                selected9 = "A";
+            }else if (document.getElementById('q9b').checked) {
+                selected9 = "B";
+            }else if (document.getElementById('q9c').checked) {
+                selected9 = "C";
+            }else if (document.getElementById('q9d').checked) {
+                selected9 = "D";
+            }
+
+
+            if (selected9 === null) {
+                output9.innerText = " Please select an option.";
+                output9.style.color = "orange";
+            } else if (selected9 === "C") {
+               output9.innerText = " Correct answer!";
+               output9.style.color = "green";
+               score++;
+            } else {
+               output9.innerText = " Incorrect answer.";
+               output9.style.color = "red";
+            }
+
+            // Q.7
+            let selected10 = null;
+            if (document.getElementById('q10a').checked) {
+                selected10 = "A";
+            }else if (document.getElementById('q10b').checked) {
+                selected10 = "B";
+            }else if (document.getElementById('q10c').checked) {
+                selected10 = "C";
+            }else if (document.getElementById('q10d').checked) {
+                selected10 = "D";
+            }
+
+
+            if (selected10 === null) {
+                output10.innerText = " Please select an option.";
+                output10.style.color = "orange";
+            } else if (selected10 === "C") {
+               output10.innerText = " Correct answer!";
+               output10.style.color = "green";
+               score++;
+            } else {
+               output10.innerText = " Incorrect answer.";
+               output10.style.color = "red";
+            }
+
+             score1.innerText = "your score is "+ score + " out of " + total ;
+             score1.style.color = "blue";
         }
         
     </script>
