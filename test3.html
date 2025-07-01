@@ -64,6 +64,13 @@ button:hover {
   color: #2c3e50;
 }
  
+ .space{
+  height: 40px;
+  border: 2px solid black;
+  text-align: center;
+  color: green;
+ }
+
 
 
     </style>
@@ -71,13 +78,21 @@ button:hover {
 <body>
 
   <div class="calculator">
-    <h2>Gold Loan Calculator</h2>
+    <div class="row">
+      <div class="col">
+        <h2>Gold Loan Calculator</h2>
 
     <label for="weight">Your Name</label>
     <input type="text" id="name" placeholder="Enter Name">
 
   <label for="weight">Gold-items</label>
-  <input type="text" id="itam" placeholder="Enter Gold-items">    
+     <select style="width: 335px; height: 40px;">
+      <option value="select">seleted</option>
+        <option value="rings">rings</option>
+        <option value="haram">haram</option>
+        <option value="ear">ear rings</option>
+        <option value="braselet">braslet</option>
+      </select>
 
     <label for="purity">Gold Purity (karat):</label>
       <select id="purity">
@@ -88,50 +103,41 @@ button:hover {
       </select>
 
     <label for="weight">Gold Weight (grams)</label>
-    <input type="number" id="weight" placeholder="e.g. 50">
+    <input type="number" id="weight" placeholder="Enter Gold Weight">
+    <div>
+      <label for="weight">Loan Amount</label>
+      <p class="space" id="result"></p></div>
 
-    <label for="rate">Gold Rate per Gram</label>
-    <input type="number" id="rate" placeholder="e.g. 60">
 
-    <label for="rate">Desired Amount</label>
-    <input type="number" id="Desired" placeholder="e.g. 60">
-    
-    
+      <div>
+      <label for="weight">Intrest</label>
+      <p class="space" id="intrest"></p></div>
 
-    
     <button onclick="calculateLoan()">Calculate Loan</button>
-
-    <div id="result"></div>
-    
+      </div>
+    </div>
   </div>
   <script>
     function calculateLoan(){
         let weight = parseFloat(document.getElementById("weight").value);
-        let rate = parseFloat(document.getElementById("rate").value);
-        let Desired = parseFloat(document.getElementById("Desired").value);
-        let purity = parseInt(document.getElementById("purity").value);
+        
+        let purity = parseFloat(document.getElementById("purity").value);
        
+          purityfraction = (purity / 24);
 
+        totalValue = weight * 10000 * purityfraction;
+        loanAmount = (totalValue * 50 )/100; 
+        intrest = ( loanAmount *2)/100;
         
-      
-          purityfraction = purity / 24;
-         
-
-        totalValue = weight * rate * purityfraction;
-        loanAmount = (totalValue * 50 )/100;
-        
-          
-
-         if (Desired <= loanAmount){
-            document.getElementById('result').innerText=
-           "loan approved" + Desired + "and Intrest per month" + (Desired *2)/100;
-            
-         }else{
            document.getElementById('result').innerText =
-           resultText = "Your not Eligible " + Desired +  "Amount. Eligible Amount " + loanAmount;
+             "Eligible Amount " + loanAmount ;
+             document.getElementById('intrest').innerText =
+             " Intrest"  + intrest;
+             document.getElementById('result').style.color = "green"
+             
          }
         
-    }
+    
     
   </script>
 
