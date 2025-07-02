@@ -63,16 +63,16 @@
 
   <div class="container">
     <h2>Leap Year Checker</h2>
-    <input type="number" id="yeaR1" placeholder="Enter a year" class="numBer1">
+    <input type="number" id="year1" placeholder="Enter a year" class="numBer1">
     <button onclick="checkLeapYear()">Check</button>
     <div class="result" id="result"></div>
   </div>
 
   <script>
     function checkLeapYear() {
-      let year = parseInt(document.getElementById('yeaR1').value);
+      let year = parseInt(document.getElementById('year1').value);
       let resultElement = document.getElementById('result');
-      if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+      if ((year % 4 == 0 && year % 100 !== 0) ) {
         resultElement.innerText = year + " is a leap year!";
         resultElement.style.color = "green";
       } else {

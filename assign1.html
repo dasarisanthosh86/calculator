@@ -1,90 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-       body {
+  <title>Even and Odd Numbers with User Input</title>
+  <style>
+    body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(90deg, rgb(60, 143, 207),rgb(204, 18, 224));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       text-align: center;
-      width: 300px;
+      padding-top: 30px;
     }
-
-    h2 {
-      color: #00796b;
-    }
-
-    input[type="number"] {
-      width: 100%;
+    input, button {
       padding: 10px;
-      margin: 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #00796b;
-      color: white;
-      border: none;
-      border-radius: 5px;
+      margin: 5px;
       font-size: 16px;
-      cursor: pointer;
     }
-
-    button:hover {
-      background-color: #004d40;
-    }
-
-    .result {
+    .output {
       margin-top: 20px;
-      font-size: 18px;
     }
-    .numBer1{
-        height: 30px;
-        width: 280px;
+    h3 {
+      margin-bottom: 5px;
     }
-    </style>
+  </style>
 </head>
 <body>
-     <div class="container">
-        <h3>Number Sign Checker</h3>
-        <input type="text" id="numBer1" placeholder="Enter a Number" class="numBer1">
-        <div class="result" id="result"></div>
-        <button onclick="checkNumberSign()" >Check</button>
-    </div>
-    <script>
-        
-        function checkNumberSign() {
-            const number = parseFloat(document.getElementById("numBer1").value);
-            const resultDiv = document.getElementById("result");
 
-            
-             if (number > 0) {
-                resultDiv.textContent = "The number is positive.";
-                resultDiv.style.color = "green";
-            } else if (number < 0) {
-                resultDiv.textContent = "The number is negative.";
-                resultDiv.style.color = "red";
-            } else {
-                resultDiv.textContent = "The number is zero.";
-                resultDiv.style.color = "blue";
-            }
+  <h2>Print Even and Odd Numbers</h2>
+
+  <input type="number" id="start" placeholder="Enter start number">
+  <input type="number" id="end" placeholder="Enter end number">
+  <br>
+  <button onclick="printEvenOdd()">Show Numbers</button>
+
+  <div class="output">
+    <h3>Even Numbers:</h3>
+    <div id="even"></div>
+
+    <h3>Odd Numbers:</h3>
+    <div id="odd"></div>
+  </div>
+
+  <script>
+    function printEvenOdd() {
+      let start = parseInt(document.getElementById("start").value);
+      let end = parseInt(document.getElementById("end").value);
+      let evenDiv = document.getElementById("even");
+      let oddDiv = document.getElementById("odd");
+
+      evenDiv.innerHTML = "";
+      oddDiv.innerHTML = "";
+
+     
+      if (start > end) {
+        alert("Start number must be less than or equal to end number.");
+      }
+      else if(start == 0){
+        alert("start number 0 cont be define");
+        return;
+      }
+      
+
+      for (let i = start; i <= end; i++) {
+        if (i % 2 === 0) {
+          evenDiv.innerHTML += i + "<br>";
+        } else {
+          oddDiv.innerHTML += i + "<br>";
         }
-    </script>        
+      }
+    }
+
+    const number = [1,2,3];
+     console.log(number);
+  </script>
+
 </body>
 </html>
