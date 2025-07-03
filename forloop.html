@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum of Array</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f8ff;
+    }
+    .container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+    .result {
+      font-size: 1.2em;
+      color: #333;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sum of Array Numbers</h2>
+  <div class="result" id="output"></div>
+</div>
+
+<script>
+  // Define an array of numbers
+  let numbers = [5, 10, 15, 20, 25];
+
+  // Initialize total
+  let total = 0;
+
+  // Traditional for loop to calculate the sum
+  for (let i = 0; i < numbers.length; i++) {
+    total += numbers[i];
+  }
+
+  // Display the result in the page
+  document.getElementById("output").textContent = "The sum is: " + total;
+</script>
+
+</body>
+</html>
+ 

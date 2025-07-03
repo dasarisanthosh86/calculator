@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyword Mapper</title>
+  <style>
+    body {
+      text-align: center;
+      background: linear-gradient(90deg, rgb(54, 204, 159), rgb(15, 88, 191));
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Data Comparison</h2>
+  <div class="result" id="output"></div>
+
+  <script>
+    const student = {
+      prasanna: "roll number: 55, age: 25, Group: MCA",
+      santhosh: "roll number: 53, age: 25, Group: MCA",
+      leela: "roll number: 54, age: 26, Group: MCA",
+      Avinash: "roll number: 56, age: 30, Group: MBA"
+    };
+
+    const student1 = {
+      prasanna1: "roll number: 55, age: 25, Group: MCA",
+      santhosh: "roll number: 53, age: 22, Group: MCA",
+      leela1: "roll number: 54, age: 26, Group: MCA",
+      Avinash: "roll number: 56, age: 35, Group: MBA"
+    };
+
+    let output = document.getElementById("output");
+    let html = "<h3>Data Comparison Result</h3>";
+
+    
+    let keys1 = Object.keys(student);
+    let keys2 = Object.keys(student1);
+    let allKeys = Array.from(new Set([...keys1, ...keys2]));
+
+    for (let i = 0; i < allKeys.length; i++) {
+      let key = allKeys[i];
+      let val1 = student[key];
+      let val2 = student1[key];
+
+      if (val1 && val2) {
+        if (val1 === val2) {
+          html += `<p>${key}:  Matched<br><small>${val1}</small></p>`;
+        } else {
+          html += `<p>${key}:  Unmatched Values<br>
+                  &nbsp;&nbsp;<strong>student:</strong> ${val1}<br>
+                  &nbsp;&nbsp;<strong>student1:</strong> ${val2}</p>`;
+        }
+      } else if (!val1 && val2) {
+        html += `<p>${key}:  Key missing in <strong>student</strong><br>
+                &nbsp;&nbsp;<strong>${key}:</strong> ${val2}</p>`;
+      } else if (val1 && !val2) {
+        html += `<p>${key}: Key missing in <strong>student1</strong><br>
+                &nbsp;&nbsp;<strong>${key}:</strong> ${val1}</p>`;
+      }
+    }
+    
+    output.innerHTML = html;
+  </script>
+
+</body>
+</html>

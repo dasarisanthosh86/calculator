@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -78,6 +78,89 @@
       } else {
         resultElement.innerText = year + " is not a leap year.";
         resultElement.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyword Mapper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 50px;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    input[type="text"], button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Keyword Mapper</h2>
+    <input type="text" id="userInput" placeholder="Try: fruits, test, school, student, teacher">
+    <button onclick="handleKeyword()">Get Result</button>
+    <div class="result" id="output"></div>
+  </div>
+
+  <script>
+    // Keyword mapping object
+    const keywordMap = {
+      fruits: "test",
+      test: "fruits",
+      school: "student",
+      student: "school",
+      teacher: "subject",
+      subject: "teacher",
+      hello: "world",
+      world: "hello"
+    };
+
+    function handleKeyword() {
+      const input = document.getElementById("userInput").value.toLowerCase().trim();
+      const output = document.getElementById("output");
+
+      if (keywordMap[input]) {
+        output.textContent = keywordMap[input];
+      } else {
+        output.textContent = "No result found for '" + input + "'";
       }
     }
   </script>
