@@ -1,53 +1,46 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sum of Array</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      background-color: #f0f8ff;
-    }
-    .container {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-    }
-    .result {
-      font-size: 1.2em;
-      color: #333;
-      margin-top: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
+    <h1>For Loop!</h1>
 
-<div class="container">
-  <h2>Sum of Array Numbers</h2>
-  <div class="result" id="output"></div>
-</div>
+    <script>
+        
+        const student = ["Santosh","Santosh1","Santosh2"];
+        // console.log(studentData);
+        for (let keys of student){
+            console.log(keys);
+        }
 
-<script>
-  // Define an array of numbers
-  let numbers = [5, 10, 15, 20, 25];
+        const employee = ["Anandh","Anandh1","Anandh2"];
+        for (let id of employee){
+            console.log(id);
+        }
 
-  // Initialize total
-  let total = 0;
+        let empData = {name: "Anandh", age:25, dept:"IT"};
+        for (let [apple, value]of Object.entries(empData)){
+            
+            console.log(apple, value);
+        }
 
-  // Traditional for loop to calculate the sum
-  for (let i = 0; i < numbers.length; i++) {
-    total += numbers[i];
-  }
+        const attan = {santosh:"A", anandh:"P", prasanna:"P", leela:"P", avinash:"P"};
 
-  // Display the result in the page
-  document.getElementById("output").textContent = "The sum is: " + total;
+        const cars = [
+            ["Swift", "Dzire", "Brezza"],
+            ["i20","i10","Creta","Alcazar"],
+            ["Kylaq", "Kodiaq", "Kushaq"]
+        ];
+
+for (let list of cars){
+    // for (let i=0; i <= 5; i++){
+
+    // }
+    console.log(list[0]);
+}
 </script>
-
 </body>
 </html>
- 

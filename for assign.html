@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Properties Logger</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-left: 4px solid #2196F3;
+    }
+
+    .item {
+      font-size: 16px;
+      color: #444;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Object Properties and Values</h1>
+  <div class="output" id="output"></div>
+
+  <script>
+    const person = {
+      name: "santhosh",
+      age: 24,
+      city: "Guntur",
+      profession: "Decoration"
+    };
+
+    const outputDiv = document.getElementById('output');
+
+    for (const key in person) {
+      const value = person[key];
+      const item = document.createElement('div');
+      item.className = 'item';
+      item.textContent = `${key}: ${value}`;
+      outputDiv.appendChild(item);
+      console.log(`${key}: ${value}`);
+    }
+  </script>
+
+</body>
+</html>

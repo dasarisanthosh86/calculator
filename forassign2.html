@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Array Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-left: 5px solid #4CAF50;
+    }
+    .item {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Doubled Array Elements</h1>
+  <div class="output" id="output"></div>
+
+  <script>
+    const numbers = [2, 4, 6, 8, 10];
+    const outputDiv = document.getElementById('output');
+
+    for (const santhosh of numbers) {
+      const doubled = santhosh * 2;
+      const item = document.createElement('div');
+      item.className = 'item';
+      item.textContent =  "Original" + santhosh + "Doubled:" +doubled;
+      outputDiv.appendChild(item)
+    }
+  </script>
+
+</body>
+</html>
